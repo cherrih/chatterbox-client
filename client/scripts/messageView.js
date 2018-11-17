@@ -7,4 +7,4 @@ var MessageView = {
         <div class="roomname"></div>
       </div>
     `)
-  };
+};
