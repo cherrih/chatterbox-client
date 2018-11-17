@@ -24,10 +24,13 @@ var App = {
       // examine the response from the server request:
       console.log(data);
       var messages = data.results;
+    
       _.each(messages, function(elem) {
+        MessagesView.renderMessage(elem);
         if(elem.hasOwnProperty('roomname') && !Rooms.rooms.includes(elem.roomname)) {
           Rooms.rooms.push(elem.roomname);
         }
+
       });
 
       callback();

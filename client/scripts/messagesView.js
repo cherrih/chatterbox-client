@@ -9,12 +9,13 @@ var MessagesView = {
       <div class="chat">
         <div class="username"><%= username %></div>
         <div class="text"><%= text %></div>
-        <div class="roomname"><%= roomname %></div>
       </div>
     `),
   
   renderMessage: function(message) {
-    this.$chats.prepend(this.render(message));
+    if (message.username && message.text){
+      this.$chats.prepend(this.render(message));
+    }
   },
 
 };
