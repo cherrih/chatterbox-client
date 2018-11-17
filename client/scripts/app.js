@@ -8,7 +8,7 @@ var App = {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
-    RoomsView.initialize();
+    // RoomsView.initialize();
     MessagesView.initialize();
     Friends.initialize();
     Rooms.initialize();
@@ -24,15 +24,14 @@ var App = {
       // examine the response from the server request:
       console.log(data);
       var messages = data.results;
-    
+      var rooms = {};
       _.each(messages, function(elem) {
         MessagesView.renderMessage(elem);
-        if(elem.hasOwnProperty('roomname') && !Rooms.rooms.includes(elem.roomname)) {
-          Rooms.rooms.push(elem.roomname);
+        if(elem.roomname !== "" && elem.roomname !== "undefined") {
+          rooms[elem.roomname] = elem.roomname;   
         }
-
       });
-
+      RoomsView.renderRoom(rooms);
       callback();
     });
   },

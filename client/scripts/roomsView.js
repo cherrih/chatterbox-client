@@ -7,13 +7,13 @@ var RoomsView = {
   },
 
   render: _.template(`
-      <div class="chat">
-        <div class="roomname"></div>
-      </div>
+        <option value="roomname"><%= room %></option>
     `),
 
-  renderRoom: function(room) {
-    this.$select.prepend(this.render(message));
+  renderRoom: function(rooms) {
+    _.each(rooms, function(room) {
+      RoomsView.$select.prepend(RoomsView.render({room}));
+    });
   }
 
 };
