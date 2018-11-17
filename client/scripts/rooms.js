@@ -1,6 +1,6 @@
 var Rooms = {
   initialize: function() {
-    $('#rooms button').on("click", function() {
+    $('#rooms button').on('click', function() {
       Rooms.add($(this).text());
     });
   },
