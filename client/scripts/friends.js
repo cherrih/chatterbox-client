@@ -9,6 +9,7 @@ var Friends = {
   friends: [],
   toggleStatus: function(username) {
     Friends.friends.push(username);
+    if (Friends.friends.contains(username))
   },
 
 };
