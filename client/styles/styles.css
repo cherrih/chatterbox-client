@@ -78,6 +78,7 @@ form input[type=text] {
 
 .chat:hover {
     background-color: #ddd;
+    
 }
 
 .spinner {
@@ -96,3 +97,6 @@ form input[type=text] {
     font-weight: bold;
 }
 
+.username:hover {
+    cursor: pointer;
+}

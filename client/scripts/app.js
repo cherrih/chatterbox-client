@@ -23,15 +23,15 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
+      if (!data.results || !data.results.length) { return; }
       var messages = data.results;
-      var rooms = {};
       _.each(messages, function(elem) {
         MessagesView.renderMessage(elem);
-        if(elem.roomname !== "" && elem.roomname !== "undefined") {
-          rooms[elem.roomname] = elem.roomname;   
+        if(elem.roomname !== '' && elem.roomname !== 'undefined') {
+          Rooms.rooms[elem.roomname] = elem.roomname;   
         }
       });
-      RoomsView.renderRoom(rooms);
+      RoomsView.renderRoom(Rooms.rooms);
       callback();
     });
   },

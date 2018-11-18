@@ -1,9 +1,9 @@
 var Messages = {
-  messageBuilder: function(username, text, roomname) {
+  messageBuilder: function() {
     return {
-        username: username,
-        text: text,
-        roomname: roomname,
+        username: App.username,
+        text: $('#message').val(),
+        roomname: Rooms.selected,
     }
   }
   

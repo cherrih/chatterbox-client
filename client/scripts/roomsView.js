@@ -7,8 +7,8 @@ var RoomsView = {
   },
 
   render: _.template(`
-        <option value="roomname"><%= room %></option>
-    `),
+        <option value="roomname"><%- room %></option>
+  `),
 
   renderRoom: function(rooms) {
     _.each(rooms, function(room) {

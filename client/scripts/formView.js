@@ -8,10 +8,11 @@ var FormView = {
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
-    debugger;
+    // 
+    // console.log($('option').prop('selected', true));
     event.preventDefault();
-    var message = MessageView.messageBuilder(username, $('#message').val(), roomname);
-    Parse.create();
+    var message = Messages.messageBuilder();
+    Parse.create(message, );
   },
 
   setStatus: function(active) {
